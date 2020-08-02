@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel = "stylesheet" href = "style.css">
+    
+</head>
+<head>
+    <style>
+    body {margin:0;}
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+    
+    .active {
+      background-color: #4CAF50;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <ul>
+      <li><a class="active" href="{% url 'index' %}">Main Page</a></li>
+      {% for i in categories %}
+      <li><a href="{% url 'posts' id=i.id %}">{{ i.name }}</a></li>
+      {% endfor %}
+    </ul>
+
+    
+    </body>
+    <div id = "div1" style="padding:20px;margin-top:30px">
+        <h1>Welcome</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias nemo officia eveniet modi vero. Quo cum a, natus unde dolor repellendus, ab corrupti porro officiis laudantium asperiores explicabo, doloremque vero.</p>
+    </div>
+
+</html>
